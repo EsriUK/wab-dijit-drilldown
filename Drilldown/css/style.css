@@ -1,0 +1,102 @@
+.jimu-widget-drilldown .search-node.default-width-for-openAtStart{
+	width: 300px;
+}
+
+.jimu-widget-drilldown .result-item-selected{
+	background: #eee;
+}
+
+.jimu-widget-drilldown .arcgisSearch .searchBtn{
+	padding: 6px;
+}
+.jimu-widget-drilldown .arcgisSearch .searchBtn:hover,
+.jimu-widget-drilldown .arcgisSearch .searchBtn:focus {
+	background-color: #485566;
+	color: white;
+}
+.jimu-widget-drilldown .arcgisSearch .searchGroup .searchInputGroup .searchInput{
+	width: auto;
+}
+
+.jimu-widget-drilldown.use-absolute .arcgisSearch .searchToggle{
+	float: left;
+}
+
+.jimu-rtl .jimu-widget-drilldown.use-absolute .arcgisSearch .searchToggle{
+	float: right;
+}
+
+.jimu-widget-drilldown.use-absolute .arcgisSearch .searchInputGroup{
+	position: absolute;
+	top: 0;
+	width: auto;
+	left: 34px;
+	right: 34px;
+}
+
+.jimu-widget-drilldown.use-absolute .arcgisSearch .searchInputGroup form{
+	overflow: hidden;
+	z-index: 0;
+	position: relative;
+}
+.jimu-widget-drilldown.use-absolute .arcgisSearch .searchInputGroup .searchClear{
+	z-index: 0;
+}
+
+.jimu-widget-drilldown.use-absolute .arcgisSearch .searchExpandContainer{
+	float: none;
+}
+
+.jimu-widget-drilldown.use-absolute .arcgisSearch .searchSubmit{
+	float: right;
+}
+
+.jimu-rtl .jimu-widget-drilldown.use-absolute .arcgisSearch .searchSubmit{
+	float: left;
+}
+
+.jimu-widget-drilldown .arcgisSearch .show-all-results{
+	position: absolute;
+	height: 25px;
+	color: #686868;
+	line-height: 25px;
+	display: none;
+	width: 237px;
+	margin: auto;
+	background-color: #fff;
+	padding: 0 12px;
+	cursor: pointer;
+}
+
+.jimu-widget-drilldown .arcgisSearch .searchMenu{
+	border-radius: 0;
+	color: #686868;
+	font-size: 12px;
+	padding: 0;
+	top: 33px;
+}
+
+.jimu-widget-drilldown .arcgisSearch .searchMenu li.active{
+	background-color: #d9dde0;
+	color: #686868;
+	font-size: 14px;
+}
+
+.jimu-widget-drilldown .arcgisSearch .searchMenu li{
+	padding: 0 12px;
+	line-height: 25px;
+}
+
+.jimu-widget-drilldown .arcgisSearch .searchMenu li:hover,
+.jimu-widget-drilldown .arcgisSearch .searchMenu li:focus {
+	background-color: #eee;
+}
+
+.jimu-widget-drilldown .arcgisSearch .searchMenu .menuHeader{
+	background-color: #d9dde0;
+	color: #686868;
+	font-size: 14px;
+	min-height: 30px;
+	padding: 0 12px;
+	line-height: 30px;
+}
