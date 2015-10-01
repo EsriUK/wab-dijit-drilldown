@@ -21,6 +21,7 @@ As an example you can add the widget to the default viewer by changing Search to
 	},
 	"version": "1.3"
 }
+```
 
 ## Issues
 
