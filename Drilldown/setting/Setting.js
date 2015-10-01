@@ -26,9 +26,9 @@ define([
     "dijit/_WidgetsInTemplateMixin",
     "jimu/BaseWidgetSetting",
     "jimu/LayerInfos/LayerInfos",
-    "../utils",
-    "./QuerySourceSetting",
-    "./LocatorSourceSetting",
+    "../Search/utils",
+    "../Search/setting/QuerySourceSetting",
+    "../Search/setting/LocatorSourceSetting",
     "./DrilldownSourceSetting",
     "jimu/dijit/SimpleTable",
     "jimu/dijit/LoadingIndicator"

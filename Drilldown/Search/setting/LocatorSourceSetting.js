@@ -1,5 +1,3 @@
-/*global declare, define, console, window, setTimeout */
-
 ///////////////////////////////////////////////////////////////////////////
 // Copyright © 2015 Esri. All Rights Reserved.
 //
@@ -61,7 +59,7 @@ define(
       singleLineFieldName: null,
       // validService: false,
       templateString: template,
-      _isNew: true,
+
       _suggestible: false,
       _locatorDefinition: null,
       _esriLocatorRegExp: /http(s)?:\/\/geocode(.){0,3}\.arcgis.com\/arcgis\/rest\/services\/World\/GeocodeServer/g,
@@ -120,10 +118,10 @@ define(
       isValidConfig: function() {
         var config = this.getConfig();
         if (config.url && config.name && config.singleLineFieldName) {
-            return true;
-        } 
-        return false;
-        
+          return true;
+        } else {
+          return false;
+        }
       },
 
       showValidationTip: function() {
@@ -173,7 +171,6 @@ define(
         }
 
         this.maxResults.set('value', config.maxResults || 6);
-
       },
 
       _isEsriLocator: function(url) {
@@ -198,8 +195,7 @@ define(
             },
             capabilities: "Geocode,ReverseGeocode,Suggest"
           });
-        }
-        else {
+        } else {
           var def = esriRequest({
             url: url,
             content: {
@@ -299,8 +295,7 @@ define(
               this.geocoderPopup.close();
               this.geocoderPopup = null;
             }
-          }
-          else {
+          } else {
             new Message({
               message: this.nls.locatorWarning
             });
