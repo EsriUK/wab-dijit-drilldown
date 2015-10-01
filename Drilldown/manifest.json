@@ -6,9 +6,9 @@
   "platform": "HTML",
   "version": "1.3",
   "wabVersion": "1.3",
-  "author": "TODO: your name here",
+  "author": "Seth Batterby",
   "description": "A hierarchical address search widget",
-  "copyright": "",
+  "copyright": "Esri UK",
   "license": "http://www.apache.org/licenses/LICENSE-2.0",
   "properties": {
     "hasVersionManager": true,
