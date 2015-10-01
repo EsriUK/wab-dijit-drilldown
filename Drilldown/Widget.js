@@ -227,13 +227,13 @@ function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerIn
 
         _convertConfig: function (config) {
             var sources = [], a = this.inherited(arguments), searchSources,
-                searchSourcesFunc = function (item, i) {
+                searchSourcesFunc = function (item) {
                     if (!isEmpty(item)) {
                         sources.push(item);
                     }
                 };
 
-        searchSources = array.map(config.sources, lang.hitch(this, function (source) {
+            searchSources = array.map(config.sources, lang.hitch(this, function (source) {
                 if (source && source.url && source.type === 'drilldown') {
                     switch (source.locatorType) {
                         case "AGS_LLPG":
@@ -264,9 +264,9 @@ function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerIn
                 }
             }));
 
-        array.forEach(searchSources, searchSourcesFunc);
-        array.forEach(a, searchSourcesFunc);
-        return sources;
+            array.forEach(searchSources, searchSourcesFunc);
+            array.forEach(a, searchSourcesFunc);
+            return sources;
         },
 
         _onSourceIndexChange: function () {
@@ -289,31 +289,33 @@ function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerIn
                 htmlContent += '<div class="searchMenu" role="menu">';
 
                 for (i in results) {
-                    if (results[i] && results[i].length) {
-                        name = sources[parseInt(i, 10)].name;
-                        if (sources.length > 1 && activeSourceIndex === 'all') {
-                            htmlContent += '<div title="' + name + '" class="menuHeader">' + name + '</div>';
-                        }
-                        htmlContent += "<ul>";
-                        partialMatch = value;
-                        r = new RegExp("(" + partialMatch + ")", "gi");
-                        maxResults = sources[i].maxResults;
+                    if (results.hasOwnProperty(i)) {
+                        if (results[i] && results[i].length) {
+                            name = sources[parseInt(i, 10)].name;
+                            if (sources.length > 1 && activeSourceIndex === 'all') {
+                                htmlContent += '<div title="' + name + '" class="menuHeader">' + name + '</div>';
+                            }
+                            htmlContent += "<ul>";
+                            partialMatch = value;
+                            r = new RegExp("(" + partialMatch + ")", "gi");
+                            maxResults = sources[i].maxResults;
 
-                        for (j = 0, len = results[i].length; j < len && j < maxResults; j++) {
-                            untitledResult = (esriBundle && esriBundle.widgets &&
-                            esriBundle.widgets.Search && esriBundle.widgets.Search.main &&
-                            esriBundle.widgets.Search.main.untitledResult) || "Untitled";
-                            text = esriLang.isDefined(results[i][j].name) ?
-                            results[i][j].name : untitledResult;
+                            for (j = 0, len = results[i].length; j < len && j < maxResults; j++) {
+                                untitledResult = (esriBundle && esriBundle.widgets &&
+                                esriBundle.widgets.Search && esriBundle.widgets.Search.main &&
+                                esriBundle.widgets.Search.main.untitledResult) || "Untitled";
+                                text = esriLang.isDefined(results[i][j].name) ?
+                                results[i][j].name : untitledResult;
 
-                            htmlContent += '<li title="' + text + '" data-index="' + j +
-                            '" data-source-index="' + i + '" role="menuitem" tabindex="0">' +
-                            text.toString().replace(r, "<strong >$1</strong>") + '</li>';
-                        }
-                        htmlContent += '</url>';
+                                htmlContent += '<li title="' + text + '" data-index="' + j +
+                                '" data-source-index="' + i + '" role="menuitem" tabindex="0">' +
+                                text.toString().replace(r, "<strong >$1</strong>") + '</li>';
+                            }
+                            htmlContent += '</url>';
 
-                        if (evt.numResults === 1) {
-                            _activeSourceNumber = i;
+                            if (evt.numResults === 1) {
+                                _activeSourceNumber = i;
+                            }
                         }
                     }
                 }
@@ -357,14 +359,16 @@ function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerIn
         },
 
         _onSelectResult: function (e) {
-            var result = e.result;
+            var result = e.result, dataSourceIndex, sourceResults, dataIndex = 0, i = 0, len = 0,
+                title, dIdx, dsIndex;
+
             if (!(result && result.name)) {
                 return;
             }
-            var dataSourceIndex = e.sourceIndex;
-            var sourceResults = this.drilldownResults[dataSourceIndex];
-            var dataIndex = 0;
-            for (var i = 0, len = sourceResults.length; i < len; i++) {
+            dataSourceIndex = e.sourceIndex;
+            sourceResults = this.drilldownResults[dataSourceIndex];
+           
+            for (i = 0, len = sourceResults.length; i < len; i++) {
                 if (jimuUtils.isEqual(sourceResults[i], result)) {
                     dataIndex = i;
                     break;
@@ -373,9 +377,9 @@ function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerIn
             query('li', this.drilldownResultsNode)
             .forEach(lang.hitch(this, function (li) {
                 html.removeClass(li, 'result-item-selected');
-                var title = html.getAttr(li, 'title');
-                var dIdx = html.getAttr(li, 'data-index');
-                var dsIndex = html.getAttr(li, 'data-source-index');
+                title = html.getAttr(li, 'title');
+                dIdx = html.getAttr(li, 'data-index');
+                dsIndex = html.getAttr(li, 'data-source-index');
 
                 if (title === result.name &&
                     dIdx === dataIndex.toString() &&
@@ -397,14 +401,16 @@ function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerIn
         },
 
         _showResultMenu: function () {
+            var groupNode, groupBox, style;
+
             html.setStyle(this.drilldownResultsNode, 'display', 'block');
             query('.show-all-results', this.drilldownResultsNode).style('display', 'none');
             query('.searchMenu', this.drilldownResultsNode).style('display', 'block');
 
-            var groupNode = query('.searchInputGroup', this.drilldownDijit.domNode)[0];
+            groupNode = query('.searchInputGroup', this.drilldownDijit.domNode)[0];
             if (groupNode) {
-                var groupBox = html.getMarginBox(groupNode);
-                var style = {
+                groupBox = html.getMarginBox(groupNode);
+                style = {
                     left: groupBox.l + 'px',
                     width: groupBox.w + 'px'
                 };
