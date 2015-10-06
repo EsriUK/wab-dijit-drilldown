@@ -1,0 +1,10 @@
+{
+    "name": "wab-dijit-drilldown",
+    "version": "0.0.1",
+    "dependencies": {
+       "drilldown": "git+https://github.com/EsriUK/arcgis-dijit-drilldown.git"
+    },
+	"preen": {
+		"drilldown": ["build/**/*"]
+	}
+}

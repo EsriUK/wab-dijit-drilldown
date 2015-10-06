@@ -15,6 +15,7 @@
   ],
   "devDependencies": {
     "grunt": "0.4.5",
+	"bower": "*",
     "grunt-contrib-copy": "*",
     "grunt-contrib-jasmine": "^0.8.0",
 	"grunt-contrib-clean": "*",
@@ -27,6 +28,8 @@
 	"mocha": "*",
     "webdriverio": "3.2.4",
     "adm-zip": "*",
-	"grunt-webdriver": "*"
+	"grunt-webdriver": "*",
+	"grunt-bower-task": "0.4.0",
+	"grunt-preen": "1.0.0"
   }
 }
