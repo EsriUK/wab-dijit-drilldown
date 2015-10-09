@@ -1,0 +1,1 @@
+define(["dojo/_base/declare"],function(a){return a(null,{PickListItems:[],constructor:function(){this.PickListItems=[]},addItem:function(a){this.PickListItems.push(a)}})});
