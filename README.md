@@ -1,5 +1,7 @@
 # wab-dijit-drilldown
 ====================
+The Web AppBuilder Widget wraps up the arcgis-dijit-drilldown code, this can be found [here](https://github.com/EsriUK/arcgis-dijit-drilldown)
+
 
 ## Features
 The drilldown widget provides hierarchical address search results.
