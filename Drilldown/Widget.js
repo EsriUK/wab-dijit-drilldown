@@ -29,15 +29,18 @@ define([
     'jimu/LayerInfos/LayerInfos',
     'jimu/utils',
     './Drilldown/Drilldown',
-    './Drilldown/Locators/AGSLLPGLocator',
     './Drilldown/Locators/LLPGLocator',
+    './Drilldown/Locators/ABXLocator',
+    "./Drilldown/Locators/GMSLocator",
+    "./Drilldown/Locators/OSGLocator",
+    "./Drilldown/Locators/ABXDPALocator",
     'esri/lang',
     './Search/utils',
     './Search/Widget',
     'dojo/i18n!esri/nls/jsapi',
     'dojo/NodeList-dom'
 ],
-function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerInfos, jimuUtils, Drilldown, AGSLLPGLocator, LLPGLocator, esriLang, utils, Search, esriBundle) {
+function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerInfos, jimuUtils, Drilldown, LLPGLocator, ABXLocator, GMSLocator, OSGLocator, ABXDPALocator, esriLang, utils, Search, esriBundle) {
     var hasOwnProperty = Object.prototype.hasOwnProperty,
         isEmpty = function (obj) {
             var key;
@@ -234,30 +237,49 @@ function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerIn
                 };
 
             searchSources = array.map(config.sources, lang.hitch(this, function (source) {
+                var locatorConf = {
+                    locator: null,
+                    outFields: ["*"],
+                    singleLineFieldName: "",
+                    name: "",
+                    placeholder: "",
+                    countryCode: "",
+                    maxResults: 6
+                };
+
                 if (source && source.url && source.type === 'drilldown') {
+                    locatorConf.singleLineFieldName = source.singleLineFieldName || "",
+                    locatorConf.name = source.name || "";
+                    locatorConf.placeholder = source.placeholder || "";
+                    locatorConf.countryCode = source.countryCode || "";
+                    locatorConf.maxResults = source.maxResults || 6;
+
                     switch (source.locatorType) {
                         case "AGS_LLPG":
-                            return {
-                                locator: new AGSLLPGLocator(source.url || ""),
-                                outFields: ["*"],
-                                singleLineFieldName: source.singleLineFieldName || "",
-                                name: source.name || "",
-                                placeholder: source.placeholder || "",
-                                countryCode: source.countryCode || "",
-                                maxResults: source.maxResults || 6
-                            };
+                            locatorConf.locator = new AGSLLPGLocator(source.url || "");
+                            break;
 
                         case "LLPG":
-                            return {
-                                locator: new LLPGLocator(source.url || ""),
-                                outFields: ["*"],
-                                singleLineFieldName: source.singleLineFieldName || "",
-                                name: source.name || "",
-                                placeholder: source.placeholder || "",
-                                countryCode: source.countryCode || "",
-                                maxResults: source.maxResults || 6
-                            };
+                            locatorConf.locator = new LLPGLocator(source.url || "");
+                            break;
+
+                        case "ABX":
+                            locatorConf.locator = new ABXLocator(source.url || "");
+                            break;
+
+                        case "GMS":
+                            locatorConf.locator = new GMSLocator(source.url || "");
+                            break;
+
+                        case "ABXDPA":
+                            locatorConf.locator = new ABXDPALocator(source.url || "");
+                            break;
+
+                        case "OSG":
+                            locatorConf.locator = new OSGLocator(source.url || "");
+                            break;
                     }
+                    return locatorConf;
                 }
                 else {
                     return {};
