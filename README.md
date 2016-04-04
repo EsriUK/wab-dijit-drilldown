@@ -7,7 +7,7 @@ The drilldown widget provides hierarchical address search results.
 The Web AppBuilder Drilldown widget extends the functionality of the WAB Search widget, so you can use it in the same way. 
 
 ## Deployment
-The widget can be used with the developer addition of the Web AppBuilder.
+The widget can be used with the developer edition of the Web AppBuilder.
 To use the widget download this repository and copy the Drilldown folder into the Web AppBuilder widget repository, by default this is client\stemapp\widgets. 
 Then to get it to show in the applications you need to modify the config files and replace the Search widget with the Drilldown widget. The config files for the applications can be
 found in client\stemapp\predefined-apps
