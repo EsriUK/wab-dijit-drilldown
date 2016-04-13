@@ -33,7 +33,10 @@ define({
     "invalidUrlTip": "The URL you have entered is invalid or inaccessible.",
     "drilldownLocator": "Drilldown Locator",
     "drilldownType": "Locator Type",
-    "AGSDrilldown": "AGS LLPG Locator",
-    "LHDrilldown": "LH LLPG Locator"
+    "LHDrilldown": "LH LLPG Locator",
+     "ABX": "AddressBase Premium",
+     "ABXDPA": "AddressBase Premium DPA",
+     "OSG": "One Scotland Gazetteer",
+     "GMS": "GMS Connector"
   })
 });

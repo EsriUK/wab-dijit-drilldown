@@ -100,3 +100,8 @@
 	padding: 0 12px;
 	line-height: 30px;
 }
+
+.picklistResults { 
+    height: 400px; 
+    overflow:auto; 
+}
