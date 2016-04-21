@@ -29,9 +29,9 @@ This widget can be used to replace the existing WebApp Builder Search widget whe
 ## Deployment
 
 There are two ways that the Web AppBuilder drilldown widget can be integrated into your Web AppBuilder apps:
-	1. Use the built-in version of the Web AppBuilder (in ArcGIS Online or Portal for ArcGIS), then download the app and switch the search widget for the drilldown widget.  
+ 1. Use the built-in version of the Web AppBuilder (in ArcGIS Online or Portal for ArcGIS), then download the app and switch the search widget for the drilldown widget.  
 	   This is the recommended approach if this is the only custom widget you are using and you only want to use the drilldown widget in a small number of apps.
-	2. Use the custom drilldown widget with the [developer edition](http://doc.arcgis.com/en/web-appbuilder/extend-apps/) of the Web AppBuilder.  
+ 2. Use the custom drilldown widget with the [developer edition](http://doc.arcgis.com/en/web-appbuilder/extend-apps/) of the Web AppBuilder.  
 	   This allows you to create application templates which use the drilldown widget instead of the search widget and then author as many apps as you wish using these templates.  This is recommended if you want to use the drilldown widget in a large number of apps and/or in combination with other custom widgets.
 
 The [wiki](https://github.com/EsriUK/wab-dijit-drilldown/wiki) provides step by step information on how to deploy the drilldown widget using each of these approaches.
@@ -46,7 +46,7 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 ## Support
 
 Use of the drilldown widget is covered by [Esri UK Developer Support](http://www.esriuk.com/support/support-services)
-If you are a customer of Esri UK’s LocatorHub product and are in current maintenance, then your use of this Drilldown Widget for the Web AppBuilder (in an unmodified state) is covered by your LocatorHub support.
+If you are a customer of Esri UKâ€™s LocatorHub product and are in current maintenance, then your use of this Drilldown Widget for the Web AppBuilder (in an unmodified state) is covered by your LocatorHub support.
 
 ## Contributing
 
