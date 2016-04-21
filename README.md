@@ -3,26 +3,37 @@ wab-dijit-drilldown
 The Web AppBuilder Widget wraps up the arcgis-dijit-drilldown code, this can be found [here](https://github.com/EsriUK/arcgis-dijit-drilldown)
 
 ## Features
-The drilldown widget provides hierarchical address search results.
-The Web AppBuilder Drilldown widget extends the functionality of the WAB Search widget, so you can use it in the same way. 
+The [drilldown widget](https://github.com/EsriUK/arcgis-dijit-drilldown) provides hierarchical address search results allowing the user to drilldown into the list of results and find a specific location.
+
+For further information on when this might be useful to you, demo sites and details on how to get started using the widget please see our [blog](http://communityhub.esriuk.com/geoxchange/2015/11/23/need-a-more-flexible-way-to-search-for-addresses?rq=drilldown).
+
+The Web Appbuilder Drilldown widget provides a version of the drilldown widget that has been wrapped up so it is ready to use directly as a custom widget within the [Web AppBuilder for ArcGIS](http://doc.arcgis.com/en/web-appbuilder/).  
+
+This widget can be used to replace the existing WebApp Builder Search widget where there is a requirement for hierarchical address searching.  
+ 
+## Requirements
+- ArcGIS Online or Portal for ArcGIS 10.4
+- Supported Browsers, these can be found [here](https://github.com/EsriUK/arcgis-dijit-drilldown/wiki/Supported-Browsers)
+- LocatorHub 5.3 (or above) and one of the following locators:
+	- Addressbase Premium (Epoch 39 or above, requires LocatorHub 5.4)
+	- LLPG
+	- IDOX GMS
+	- One Scotland Gazetteer
+	- Merge or Cascade locators using an appropriate standardised schema.
+	  For further information on the schema please see [here](https://github.com/EsriUK/arcgis-dijit-drilldown/wiki/Standardised-Schema)
+- Experience with the Web AppBuilder for ArcGIS
+- Basic developer skills (to edit the configuration based on step by step instructions)
+- Capability to host your application
+
 
 ## Deployment
-The widget can be used with the developer edition of the Web AppBuilder.
-To use the widget download this repository and copy the Drilldown folder into the Web AppBuilder widget repository, by default this is client\stemapp\widgets. 
-Then to get it to show in the applications you need to modify the config files and replace the Search widget with the Drilldown widget. The config files for the applications can be
-found in client\stemapp\predefined-apps
 
-As an example you can add the widget to the default viewer by changing Search to Drilldown as shown below.
-```javascript
-{
-	"uri": "widgets/Drilldown/Widget",
-    "position": {
-		"left": 55,
-		"top": 5
-	},
-	"version": "1.3"
-}
-```
+There are two ways that the Web AppBuilder drilldown widget can be integrated into your Web AppBuilder apps:
+1.	Use the built-in version of the Web AppBuilder (in ArcGIS Online or Portal for ArcGIS), then download the app and switch the search widget for the drilldown widget.  This is the recommended approach if this is the only custom widget you are using and you only want to use the drilldown widget in a small number of apps.
+2.	Use the custom drilldown widget with the [developer edition](http://doc.arcgis.com/en/web-appbuilder/extend-apps/) of the Web AppBuilder.  This allows you to create application templates which use the drilldown widget instead of the search widget and then author as many apps as you wish using these templates.  This is recommended if you want to use the drilldown widget in a large number of apps and/or in combination with other custom widgets.
+The [wiki](https://github.com/EsriUK/wab-dijit-drilldown/wiki) provides step by step information on how to deploy the drilldown widget using each of these approaches.
+Once you have created your application you will need to host it.  Esri UK provides a hosting capability through AppHub, please contact your Customer Success Manager if you are interested in this service.
+
 
 ## Issues
 
@@ -30,7 +41,8 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 
 ## Support
 
-Use of this widget is covered by [Esri UK Developer Support](http://www.esriuk.com/support/support-services)
+Use of the drilldown widget is covered by [Esri UK Developer Support](http://www.esriuk.com/support/support-services)
+If you are a customer of Esri UK’s LocatorHub product and are in current maintenance, then your use of this Drilldown Widget for the Web AppBuilder (in an unmodified state) is covered by your LocatorHub support.
 
 ## Contributing
 
