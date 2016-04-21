@@ -29,10 +29,13 @@ This widget can be used to replace the existing WebApp Builder Search widget whe
 ## Deployment
 
 There are two ways that the Web AppBuilder drilldown widget can be integrated into your Web AppBuilder apps:
-	1.	Use the built-in version of the Web AppBuilder (in ArcGIS Online or Portal for ArcGIS), then download the app and switch the search widget for the drilldown widget.  This is the recommended approach if this is the only custom widget you are using and you only want to use the drilldown widget in a small number of apps.
-	2.	Use the custom drilldown widget with the [developer edition](http://doc.arcgis.com/en/web-appbuilder/extend-apps/) of the Web AppBuilder.  This allows you to create application templates which use the drilldown widget instead of the search widget and then author as many apps as you wish using these templates.  This is recommended if you want to use the drilldown widget in a large number of apps and/or in combination with other custom widgets.
+	1. Use the built-in version of the Web AppBuilder (in ArcGIS Online or Portal for ArcGIS), then download the app and switch the search widget for the drilldown widget.  
+	   This is the recommended approach if this is the only custom widget you are using and you only want to use the drilldown widget in a small number of apps.
+	2. Use the custom drilldown widget with the [developer edition](http://doc.arcgis.com/en/web-appbuilder/extend-apps/) of the Web AppBuilder.  
+	   This allows you to create application templates which use the drilldown widget instead of the search widget and then author as many apps as you wish using these templates.  This is recommended if you want to use the drilldown widget in a large number of apps and/or in combination with other custom widgets.
 
 The [wiki](https://github.com/EsriUK/wab-dijit-drilldown/wiki) provides step by step information on how to deploy the drilldown widget using each of these approaches.
+
 Once you have created your application you will need to host it.  Esri UK provides a hosting capability through AppHub, please contact your Customer Success Manager if you are interested in this service.
 
 
