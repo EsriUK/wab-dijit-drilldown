@@ -45,7 +45,8 @@ Find a bug or want to request a new feature?  Please let us know by submitting a
 
 ## Support
 
-Use of the drilldown widget is covered by [Esri UK Developer Support](http://www.esriuk.com/support/support-services)
+Use of the drilldown widget is covered by [Esri UK Developer Support](http://www.esriuk.com/support/support-services).
+
 If you are a customer of Esri UK’s LocatorHub product and are in current maintenance, then your use of this Drilldown Widget for the Web AppBuilder (in an unmodified state) is covered by your LocatorHub support.
 
 ## Contributing
