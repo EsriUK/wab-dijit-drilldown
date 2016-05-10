@@ -12,7 +12,7 @@ The Web Appbuilder Drilldown widget provides a version of the drilldown widget t
 This widget can be used to replace the existing WebApp Builder Search widget where there is a requirement for hierarchical address searching.  
  
 ## Requirements
-- ArcGIS Online or Portal for ArcGIS 10.4
+- Web AppBuilder or Web AppBuilder Dev Edition. See [here](https://github.com/EsriUK/wab-dijit-drilldown/wiki)
 - Supported Browsers, these can be found [here](https://github.com/EsriUK/arcgis-dijit-drilldown/wiki/Supported-Browsers)
 - LocatorHub 5.3 (or above) and one of the following locators:
 	- Addressbase Premium (Epoch 39 or above, requires LocatorHub 5.4)
