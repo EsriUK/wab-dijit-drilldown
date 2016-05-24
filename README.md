@@ -19,7 +19,7 @@ This widget can be used to replace the existing WebApp Builder Search widget whe
 	- LLPG
 	- IDOX GMS
 	- One Scotland Gazetteer
-	- Merge or Cascade locators using an appropriate standardised schema.
+	- Merge or Cascade locators using an appropriate standardised schema (requires LocatoHub 5.4).
 	  For further information on the schema please see [here](https://github.com/EsriUK/arcgis-dijit-drilldown/wiki/Standardised-Schema)
 - Experience with the Web AppBuilder for ArcGIS
 - Basic developer skills (to edit the configuration based on step by step instructions)
