@@ -17,7 +17,7 @@ This widget can be used to replace the existing WebApp Builder Search widget whe
 - LocatorHub 5.3 (or above) and one of the following locators:
 	- Addressbase Premium (Epoch 39 or above, requires LocatorHub 5.4)
 	- LLPG
-	- IDOX GMS
+	- IDOX GMS Connector, V8.2 or greater **
 	- One Scotland Gazetteer
 	- Merge or Cascade locators using an appropriate standardised schema (requires LocatorHub 5.4).
 	  For further information on the schema please see [here](https://github.com/EsriUK/arcgis-dijit-drilldown/wiki/Standardised-Schema)
@@ -64,3 +64,6 @@ Licensed under the Apache License, Version 2.0 (the "License"); you may not use 
 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the Licence.
 
 A copy of the license is available in the repository's [license.txt](license.txt) file.
+
+
+**[IDOX GMS Connector Configuration](https://github.com/EsriUK/arcgis-dijit-drilldown/wiki/IDOX-GMS-Connector-Configuration)
