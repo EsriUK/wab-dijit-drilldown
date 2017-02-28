@@ -305,44 +305,17 @@ function (declare, lang, array, html, when, on, query, keys, BaseWidget, LayerIn
             if (results && evt.numResults > 0) {
                 html.removeClass(this.drilldownDijit.containerNode, 'showSuggestions');
                 this.drilldownResults = results;
-                htmlContent += '<div class="show-all-results jimu-ellipsis" title="' +
-                this.nls.showAll + '">' +
-                this.nls.showAllResults + '<strong >' + value + '</strong></div>';
-                htmlContent += '<div class="searchMenu" role="menu">';
+                
 
                 for (i in results) {
                     if (results.hasOwnProperty(i)) {
                         if (results[i] && results[i].length) {
-                            name = sources[parseInt(i, 10)].name;
-                            if (sources.length > 1 && activeSourceIndex === 'all') {
-                                htmlContent += '<div title="' + name + '" class="menuHeader">' + name + '</div>';
-                            }
-                            htmlContent += "<ul>";
-                            partialMatch = value;
-                            r = new RegExp("(" + partialMatch + ")", "gi");
-                            maxResults = sources[i].maxResults;
-
-                            for (j = 0, len = results[i].length; j < len && j < maxResults; j++) {
-                                untitledResult = (esriBundle && esriBundle.widgets &&
-                                esriBundle.widgets.Search && esriBundle.widgets.Search.main &&
-                                esriBundle.widgets.Search.main.untitledResult) || "Untitled";
-                                text = esriLang.isDefined(results[i][j].name) ?
-                                results[i][j].name : untitledResult;
-
-                                htmlContent += '<li title="' + text + '" data-index="' + j +
-                                '" data-source-index="' + i + '" role="menuitem" tabindex="0">' +
-                                text.toString().replace(r, "<strong >$1</strong>") + '</li>';
-                            }
-                            htmlContent += '</url>';
-
                             if (evt.numResults === 1) {
                                 _activeSourceNumber = i;
                             }
                         }
                     }
                 }
-                htmlContent += "</div>";
-                this.drilldownResultsNode.innerHTML = htmlContent;
 
                 this._showResultMenu();
 
