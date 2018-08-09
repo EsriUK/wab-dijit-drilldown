@@ -31,11 +31,12 @@ The widget can also be used with ArcGIS Enterprise by hosting the widget on your
 ## Deployment
 
 There are three ways that the Web AppBuilder drilldown widget can be integrated into your Web AppBuilder apps:
- 1. Use the built-in version of the Web AppBuilder (in ArcGIS Online or Portal for ArcGIS), then download the app and switch the search widget for the drilldown widget.  
-	   This is the recommended approach if this is the only custom widget you are using and you only want to use the drilldown widget in a small number of apps.
- 2. Use the custom drilldown widget with the [developer edition](http://doc.arcgis.com/en/web-appbuilder/extend-apps/) of the Web AppBuilder.  
-	   This allows you to create application templates which use the drilldown widget instead of the search widget and then author as many apps as you wish using these templates.  This is recommended if you want to use the drilldown widget in a large number of apps and/or in combination with other custom widgets.
-3. If using Portal for ArcGIS, host a custom drilldown widget on your server then use this with Web AppBuilder. [See: Add custom widgets](http://enterprise.arcgis.com/en/portal/latest/use/add-custom-widgets.htm).
+ 1. If using ArcGIS Enterprise, host a custom drilldown widget on your server then use this with Web AppBuilder. [See: Add custom widgets](http://enterprise.arcgis.com/en/portal/latest/use/add-custom-widgets.htm). This is the recommended approach if you have ArcGIS Enterprise 10.5.1 or greater.
+ 2. Use the built-in version of the Web AppBuilder (in ArcGIS Online or ArcGIS Enterprise), then download the app and switch the search widget for the drilldown widget.  
+	   This is the recommended approach if this is the only custom widget you are using and you only want to use the drilldown widget in a small number of apps, if you do not have ArcGIS Enterprise.
+ 3. Use the custom drilldown widget with the [developer edition](http://doc.arcgis.com/en/web-appbuilder/extend-apps/) of the Web AppBuilder.  
+	   This allows you to create application templates which use the drilldown widget instead of the search widget and then author as many apps as you wish using these templates.  This is recommended if you want to use the drilldown widget in a large number of apps and/or in combination with other custom widgets, if you do not have ArcGS Enterprise.
+
 
 The [wiki](https://github.com/EsriUK/wab-dijit-drilldown/wiki) provides step by step information on how to deploy the drilldown widget using each of these approaches.
 
