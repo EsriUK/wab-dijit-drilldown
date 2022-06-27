@@ -2,6 +2,9 @@ wab-dijit-drilldown
 ====================
 The Web AppBuilder Widget wraps up the arcgis-dijit-drilldown code, this can be found [here](https://github.com/EsriUK/arcgis-dijit-drilldown)
 
+## Deprecation Notice
+Following the [announcement](https://communityhub.esriuk.com/technicalsupport/2021/4/29/locatorhub-is-retiring) that LocatorHub will be retired in December 2023, this repo will archived at this time. 
+
 ## Features
 The [drilldown widget](https://github.com/EsriUK/arcgis-dijit-drilldown) provides hierarchical address search results allowing the user to drilldown into the list of results and find a specific location.
 
